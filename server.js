@@ -6,6 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Meal = require('./models/mealSchema.js');
+app.use(express.urlencoded({extended:true}));
 require('dotenv').config()
 //___________________
 //Port
@@ -47,11 +49,36 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
-//localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
-
+//home homepage
+app.get('/', (req, res) => {
+  res.render('index.ejs')
+})
+//my list page and google maps
+app.get('/home', (req, res) => {
+  res.render('home.ejs')
+})
+//list page
+app.get("/mylist", (req, res) => {
+  res.render('myList.ejs')
+})
+//post to list
+app.post("/mylist", (req, res) => {
+  Meal.create(req.body, (error, createdMeal) => {
+    console.log(createdMeal);
+  })
+})
+//add to the list
+app.get("/mylist/add", (req, res) => {
+  res.render("add.ejs")
+})
+//show page for restaurant
+app.get("/mylist/:id", (req, res) => {
+  res.render('show.ejs')
+})
+//edit list
+app.get("/mylist/:id/edit", (req, res) => {
+  res.render("edit.ejs")
+})
 //___________________
 //Listener
 //___________________
