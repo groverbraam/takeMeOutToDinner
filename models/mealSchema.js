@@ -4,13 +4,14 @@ const mealSchema = new mongoose.Schema({
   restaurantName: {type: String, required: true},
   location: {type: String, required: true},
   rating: {type: Number, min: 0, max:5, required: true},
+  date: {type: Date, required: true},
   name: {type: String, required: true},
-  appetizer: {type: [String]},
-  entree: {type: [String]},
-  dessert: {type: [String]},
-  alcoholicDrink: {type: [String]},
-  nonAlcoholicDrink: {type: [String]}
-})
+  appetizer: [String],
+  entree: [String],
+  dessert: [String],
+  alcoholicDrink: [String],
+  nonAlcoholicDrink: [String],
+},{timestamps: true})
 
 const Meal = mongoose.model('Meal', mealSchema);
 

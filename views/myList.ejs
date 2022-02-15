@@ -20,16 +20,20 @@
 
     <button><a href="/mylist/add">Add Restaurant</a></button>
 
-    <div class="card bg-light mb-3" style="width: 40rem;">
-      <div class="card-body">
-        <button type="button" class="close">&times;</button>
-        <h5 class="card-title">Waffle House</h5>
-        <p class="card-text">Atlanta, GA</p>
-        <p class="card-text">Rating: 5</p>
-        <button><a href="/mylist/:id">View</a></button>
-        <button><a href="/mylist/:id/edit">Edit</a></button>
+    <% for(let i = 0; i < meals.length; i++){ %>
+      <div class="card bg-light mb-3" style="width: 40rem;">
+        <div class="card-body">
+        <!-- close (x) button in the corner I may add it back later -->
+          <!-- <button type="button" class="close">&times;</button> -->
+          <h5 class="card-title"><%=meals[i].restaurantName%></h5>
+          <p class="card-text"><%=meals[i].location%></p>
+          <p class="card-text">Rating: <%=meals[i].rating%></p>
+          <button><a href="/mylist/<%=meals[i]._id%>">View</a></button>
+          <button><a href="/mylist/<%=meals[i]._id%>/edit">Edit/Delete</a></button>
+        </div>
       </div>
-    </div>
+  <% } %>
+
 
     <%- include('./partials/footer.ejs') %>
   </body>

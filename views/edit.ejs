@@ -17,19 +17,20 @@
     <a href="/mylist">Back to my list</a>
 
     <div class="jumbotron">
-      <h1 class="display-4">Waffle house</h1>
-      <form action="/mylist/id/edit?_method=PUT" method="POST">
-        Restaurant Name: <input type="text" name="resurant-name" value=""/><br/>
-        Location: <input type="text" name="location" value=""/><br/>
-        Rating: <input type="number" min="1" max="5" name="rating" value=""/><br/>
-        Name: <input type="text" name="name" value=""/><br/>
-        Appetizer: <input type="text" name="appetizer" value=""/><br/>
-        Entree: <input type="text" name="entree" value=""/><br/>
-        Dessert: <input type="text" name="dessert" value=""/><br/>
-        Alcoholic Drink: <input type="text" name="alcoholic-drink" value=""/><br/>
-        Non-Alcoholic Drink: <input type="text" name="non-alcoholic-drink" value=""/><br/>
+      <form action="/mylist/<%=meals.id%>?_method=PUT" method="POST">
+        Restaurant Name: <input type="text" name="restaurantName" value="<%=meals.restaurantName%>"/><br/>
+        Location: <input type="text" name="location" value="<%=meals.location%>"/><br/>
+        Rating: <input type="number" min="1" max="5" name="rating" value="<%=meals.rating%>"/><br/>
+        Date: <input type="date" name="date" required pattern="\d{4}-\d{2}-\d{2}" vale="<%=meals.date%>"><br/>
+        Name: <input type="text" name="name" value="<%=meals.name%>"/><br/>
+        Appetizer: <input type="text" name="appetizer" value="<%=meals.appetizer%>"/><br/>
+        Entree: <input type="text" name="entree" value="<%=meals.entree%>"/><br/>
+        Dessert: <input type="text" name="dessert" value="<%=meals.dessert%>"/><br/>
+        Alcoholic Drink: <input type="text" name="alcoholicDrink" value="<%=meals.alcoholicDrink%>"/><br/>
+        Non-Alcoholic Drink: <input type="text" name="nonAlcoholicDrink" value="<%=meals.nonAlcoholicDrink%>"/><br/>
 
-        <input type="submit" value="Submit Changes">
+        <button type="submit" value="Submit Changes">Submit Changes</button>
+        <button action="/mylist/<%=meals.id%>?_method=DELETE" method="POST">Delete</button>
       </form>
     </div>
     <%- include('./partials/footer.ejs') %>

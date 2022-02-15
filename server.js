@@ -3,11 +3,10 @@
 //___________________
 const express = require('express');
 const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
-const app = express ();
+const mongoose = require('mongoose');
+const app = express();
 const db = mongoose.connection;
 const Meal = require('./models/mealSchema.js');
-app.use(express.urlencoded({extended:true}));
 require('dotenv').config()
 //___________________
 //Port
@@ -49,6 +48,16 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
+///updating list
+app.put("mylist/:id", (req, res) => {
+  Meal.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedMeal) => {
+    if (error) {
+      console.log("error");
+    } else {
+      res.redirect("/mylist")
+    }
+  })
+})
 //home homepage
 app.get('/', (req, res) => {
   res.render('index.ejs')
@@ -57,15 +66,24 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('home.ejs')
 })
-//list page
-app.get("/mylist", (req, res) => {
-  res.render('myList.ejs')
-})
 //post to list
 app.post("/mylist", (req, res) => {
+  ////Trying to remove timezone
+  // let date = req.body.date;
+  // date.toTimeString();
   Meal.create(req.body, (error, createdMeal) => {
-    console.log(createdMeal);
+    res.redirect("/mylist");
   })
+})
+//list page
+app.get("/mylist", (req, res) => {
+  Meal.find({}, (err, allMeals) => {
+  res.render('myList.ejs',
+  {
+    meals: allMeals
+  }
+)
+})
 })
 //add to the list
 app.get("/mylist/add", (req, res) => {
@@ -73,11 +91,22 @@ app.get("/mylist/add", (req, res) => {
 })
 //show page for restaurant
 app.get("/mylist/:id", (req, res) => {
-  res.render('show.ejs')
+  Meal.findById(req.params.id, (err, selectedMeal) => {
+  res.render("show.ejs",
+  {
+    meals: selectedMeal
+  }
+)
 })
+})
+
 //edit list
 app.get("/mylist/:id/edit", (req, res) => {
-  res.render("edit.ejs")
+  Meal.findById(req.params.id, (error, updatedMeal) => {
+    res.render("edit.ejs", {
+      meals: updatedMeal
+    })
+  })
 })
 //___________________
 //Listener

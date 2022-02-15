@@ -18,10 +18,11 @@
 
     <!-- <div class="jumbotron"> -->
       <form action="/mylist" method="POST">
-        Restaurant Name: <input type="text" name="resturantName"/><br/>
+        Restaurant Name: <input type="text" name="restaurantName"/><br/>
         Location: <input type="text" name="location"/><br/>
         Rating: <input type="number" min="1" max="5" name="rating"/><br/>
-        Name: <input type="text" name="name" value=""/><br/>
+        Date: <input type="date" name="date" required pattern="\d{4}-\d{2}-\d{2}"><br/>
+        Name: <input type="text" name="name"/><br/>
         Appetizer: <input type="text" name="appetizer"/><br/>
         Entree: <input type="text" name="entree"/><br/>
         Dessert: <input type="text" name="dessert"/><br/>

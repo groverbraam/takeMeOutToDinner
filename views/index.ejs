@@ -13,12 +13,15 @@
   </head>
   <body>
 
-
-    <%- include('./partials/header.ejs') %>
-
-    <%- include('./partials/signUp_modal.ejs') %>
-
-    <%- include('./partials/logIn_modal.ejs') %>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Meal List</h1>
+        <hr class="my-4">
+        <p class="lead">Make every meal unforgettable.</p>
+        <%- include('./partials/signUp_modal.ejs') %>
+        <%- include('./partials/logIn_modal.ejs') %>
+      </div>
+    </div>
 
     <%- include('./partials/footer.ejs') %>
   </body>
