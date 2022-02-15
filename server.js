@@ -49,7 +49,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 ///updating list
-app.put("mylist/:id", (req, res) => {
+app.put("/mylist/:id", (req, res) => {
   Meal.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedMeal) => {
     if (error) {
       console.log("error");
@@ -108,6 +108,13 @@ app.get("/mylist/:id/edit", (req, res) => {
     })
   })
 })
+///delete from the list
+app.delete("/mylist/:id", (req, res) => {
+  Meal.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect("/mylist")
+  })
+})
+
 //___________________
 //Listener
 //___________________
