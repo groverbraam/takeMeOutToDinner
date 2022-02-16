@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/groverbraam/takeMeOutToDinner#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "jquery": "^3.6.0",
     "jsdom": "^19.0.0",
     "method-override": "^3.0.0",

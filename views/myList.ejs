@@ -14,9 +14,16 @@
   <body>
 
     <%- include('./partials/header.ejs') %>
-    <a href="#">Logout </a>
+
+    <a href="/">Logout </a>
 
     <a href="/home">Back to home</a>
+
+    <div id="container">
+            <div id="search">
+                <label for="searchInput">Find <i class="fa fa-search"></i>Friends</label>
+                <input id="searchInput" type="text" placeholder="Search">
+            </div>
 
     <button><a href="/mylist/add">Add Restaurant</a></button>
 
@@ -25,16 +32,19 @@
         <div class="card-body">
         <!-- close (x) button in the corner I may add it back later -->
           <!-- <button type="button" class="close">&times;</button> -->
-          <h5 class="card-title"><%=meals[i].restaurantName%></h5>
-          <p class="card-text"><%=meals[i].location%></p>
-          <p class="card-text">Rating: <%=meals[i].rating%></p>
+        <ul id="results">
+          <li class="card-title"><%=meals[i].restaurantName%></li>
+          <li class="card-text"><%=meals[i].location%></li>
+          <li class="card-text">Rating: <%=meals[i].rating%></li>
+        </ul>
           <button><a href="/mylist/<%=meals[i]._id%>">View</a></button>
           <button><a href="/mylist/<%=meals[i]._id%>/edit">Edit/Delete</a></button>
         </div>
       </div>
   <% } %>
 
-
     <%- include('./partials/footer.ejs') %>
+
+    <script src="./views/javascript/index.js"></script>
   </body>
 </html>

@@ -6,6 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 const db = mongoose.connection;
+const bcrypt = require('bcrypt');
+const session = require('express-session')
 const Meal = require('./models/mealSchema.js');
 require('dotenv').config()
 //___________________
@@ -114,7 +116,15 @@ app.delete("/mylist/:id", (req, res) => {
     res.redirect("/mylist")
   })
 })
-
+// app.put('/mylist', (req, res) => {
+//   Meal.find(req.params.restaurantName, (err, allMeals) => {
+//   res.render('myList.ejs',
+//   {
+//     meals: allMeals
+//   }
+// )
+// })
+// })
 //___________________
 //Listener
 //___________________

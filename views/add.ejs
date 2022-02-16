@@ -9,29 +9,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script>
+      function addGuest () {
+        const guestValue = document.getElementById('guests').value;
+        const container = document.getElementById('container');
+
+        while(container.hasChildNodes()) {
+          container.removeChild(container.lastChild)
+        }
+
+        for(let i = 0; i < guestValue; i++) {
+          container.appendChild(document.createTextNode("Name"))
+          let input = document.createElement("input")
+          input.type = "text";
+          input.name = "guests" + i;
+          container.appendChild(input);
+          container.appendChild(document.createElement('br'))
+        }
+      }
+      // console.log("test", guestValue)
+    </script> -->
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <%- include('./partials/header.ejs') %>
 
-    <a href="/mylist">Back to my list</a>
+    <a href="/mylist">Back to my list</a><br/>
 
-    <!-- <div class="jumbotron"> -->
+      <!-- *Number of guests:<input type="number" id="guests" name="guests" min="1" max="10">
+      <button id="filldetails" onclick="addGuest()">+</button> -->
+
+
       <form action="/mylist" method="POST">
-        Restaurant Name: <input type="text" name="restaurantName"/><br/>
-        Location: <input type="text" name="location"/><br/>
-        Rating: <input type="number" min="1" max="5" name="rating"/><br/>
-        Date: <input type="date" name="date"><br/>
-        Name: <input type="text" name="name"/><br/>
+        *Restaurant Name: <input type="text" name="restaurantName"/><br/>
+        *Location: <input type="text" name="location"/><br/>
+        *Rating: <input type="number" min="1" max="5" name="rating"/><br/>
+        *Date: <input type="text" name="date" placeholder="mm/dd/yyyy"><br/>
+      </br>
+        *Name: <input type="text" name="name"/><br/>
         Appetizer: <input type="text" name="appetizer"/><br/>
         Entree: <input type="text" name="entree"/><br/>
         Dessert: <input type="text" name="dessert"/><br/>
         Alcoholic Drink: <input type="text" name="alcoholicDrink"/><br/>
         Non-Alcoholic Drink: <input type="text" name="nonAlcoholicDrink"/><br/>
-
+        <p>* field is required.</p>
+        <!-- <div id="container">
+        </div> -->
         <input type="submit" value="Submit Changes">
       </form>
-    <!-- </div> -->
+
+
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>
