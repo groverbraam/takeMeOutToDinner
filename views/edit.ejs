@@ -26,7 +26,7 @@
       <form action="/mylist/<%=meals.id%>?_method=PUT" method="POST">
           *Restaurant Name:</br> <input type="text" name="restaurantName" value="<%=meals.restaurantName%>"/><br/>
           *Location:</br>  <input type="text" name="location" value="<%=meals.location%>" /><br/>
-          *Rating:</br>  <input type="number" min="1" max="5" maxlength="1" name="rating" value="<%=meals.rating%>" /><br/>
+          *Rating (1-5):</br>  <input type="number" min="1" max="5" maxlength="1" name="rating" value="<%=meals.rating%>" /><br/>
         <!-- cant figure out how to make the date value to show up -->
           *Date:</br>  <input type="text" name="date" value="<%=meals.date%>" ><br/>
         </div>

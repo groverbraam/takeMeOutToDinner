@@ -46,13 +46,13 @@
 
 <script>
   function Search(item){
-          let collection = document.getElementsByClassName("card-title");
+          let title = document.getElementsByClassName("card-title");
           let card = document.getElementsByClassName("card-body")
 
-          for (i = 0; i < collection.length; i++){
-              if (((collection[i].innerHTML).toLowerCase()).indexOf(item) > -1) {
-                  collection[i].style.display = "block"
-                  card[i].style.display = "block";
+          for (i = 0; i < title.length; i++){
+              if (((title[i].innerHTML).toLowerCase()).indexOf(item) > -1) {
+                  title[i].style.display = ""
+                  card[i].style.display = "flex";
                   } else {
                       collection[i].style.display = "none"
                       card[i].style.display = "none";
