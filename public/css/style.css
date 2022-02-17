@@ -23,16 +23,7 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border-style: solid;
-  color: var(--silver);
   text-align: center;
-  box-shadow:
-		/* inset shadow */
-       inset 0 -3em 3em rgba(0,0,0,0.1),
-		/* regular drop shadow */
-             0 0  0 2px rgb(255,255,255),
-		/* border effect shadow */
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 p {
   font-size: 20px;
