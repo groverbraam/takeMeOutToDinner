@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signUp">Sign up</button>
+<button type="button" class="btn-signup" data-toggle="modal" data-target="#signUp">Sign up</button>
 
 
 <div id="signUp" class="modal fade" role="dialog">
@@ -11,13 +11,14 @@
       </div>
       <div class="modal-body">
         <form>
+          <input type="string" placeholder="Name">
           <input type="string" placeholder="Email"> <br/>
           <input type="string" placeholder="Create a password">
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#logIn">Already a member? Sign in</button>
-        <a href="/home"><button type="button" class="btn btn-outline-primary">Continue</button></a>
+        <button type="button" data-dismiss="modal" data-toggle="modal" data-target="#logIn">Already a member?</button>
+        <a href="/home"><button type="button">Continue</button></a>
       </div>
     </div>
 

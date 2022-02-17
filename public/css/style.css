@@ -1,8 +1,220 @@
-#results {
-  list-style-type: none;
+:root {
+  --ruby: #A41623;
+  --honeydew: #EAF2E3;
+  --blue: #61E8E1;
+  --corn: #F2E863;
+  --orange: #DB504A;
+}
+#searchBar{
+  color: black;
 }
 #map {
-  width: 100%;
-  height: 400px;
+  width: 400px;
+  height: 410px;
   background-color: grey;
+  margin-top: 9px;
+}
+li {
+  list-style-type: none;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-style: solid;
+    color: var(--orange);
+}
+p {
+  font-size: 20px
+}
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  background-color: var(--orange);
+  padding: 2%;
+  margin-bottom: 1%;
+}
+.logout{
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-style: solid;
+  background-color: var(--orange);
+  padding: 20px;
+  width: 250px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+.card-body > a:hover {
+  color: black;
+
+}
+.card-body > p{
+  font-size: 20px;
+}
+.restaurant-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-style: solid;
+  background-color: var(--orange);
+  padding: 20px;
+  width: 500px;
+  margin-bottom: 1%;
+}
+.name-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-style: solid;
+  background-color: var(--orange);
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 1%;
+}
+a {
+  text-decoration: none;
+  color: var(--honeydew);
+}
+* {
+  font-family: 'Shizuru', cursive;
+  color: var(--honeydew);
+}
+body {
+  background-color: var(--blue);
+  background-image: url(/imgs/wood-2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1rem
+}
+.search{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  background-color: var(--orange);
+  padding: 1%;
+  margin-bottom: 1%;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border-style: solid;
+  background-color: var(--orange);
+  padding: 1%;
+  margin-bottom: 1%;
+}
+.delete-btn {
+  margin-bottom: 3%
+}
+.home-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-style: solid;
+  background-color: var(--orange);
+  margin-bottom: 1%
+}
+.mylist-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* border-style: solid; */
+  /* border-color: var(--orange); */
+  width: 500px;
+  height: 500px;
+  align-items: center;
+}
+img {
+  width: 400px;
+  height: 400px;
+}
+.mylist-btn {
+  font-size: 30px;
+  padding-bottom: 3%;
+  margin-bottom: 3%;
+}
+.index-container {
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  background-color: var(--orange);
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px;
+  padding: 80px;
+}
+.index-container > h1 {
+  font-size: 150px;
+  text-align: center;
+}
+.index-container > p {
+  font-size: 50px;
+  text-align: center;
+}
+.modal-content {
+  background-color: var(--blue);
+  background-image: url(/imgs/wood-2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+button {
+  background-color: var(--orange);
+}
+.login-btns > button {
+  background-color: var(--orange);
+  height: 50px;
+  width: 80px;
+}
+.login-btns{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.btn-login{
+  margin-left: 10px;
+  text-align: center;
+}
+.btn-signup{
+  text-align: center;
+}
+.home-img {
+  padding-top: 10px;
+}
+@media (max-width: 545px) {
+  .index-container > h1 {
+    font-size: 100px;
+    text-align: center;
+  }
+  .index-container > p {
+    font-size: 25px;
+    text-align: center;
+  }
 }

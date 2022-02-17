@@ -2,6 +2,7 @@
 //Dependencies
 //___________________
 const express = require('express');
+const $ = require('jquery')
 const methodOverride  = require('method-override');
 const mongoose = require('mongoose');
 const app = express();

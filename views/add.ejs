@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Meal List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!-- <script>
-      function addGuest () {
-        const guestValue = document.getElementById('guests').value;
-        const container = document.getElementById('container');
-
-        while(container.hasChildNodes()) {
-          container.removeChild(container.lastChild)
-        }
-
-        for(let i = 0; i < guestValue; i++) {
-          container.appendChild(document.createTextNode("Name"))
-          let input = document.createElement("input")
-          input.type = "text";
-          input.name = "guests" + i;
-          container.appendChild(input);
-          container.appendChild(document.createElement('br'))
-        }
-      }
-      // console.log("test", guestValue)
-    </script> -->
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Meal List</title>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <%- include('./partials/font.ejs') %>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
   <body>
-    <%- include('./partials/header.ejs') %>
-
-    <a href="/mylist">Back to my list</a><br/>
-
-      <!-- *Number of guests:<input type="number" id="guests" name="guests" min="1" max="10">
-      <button id="filldetails" onclick="addGuest()">+</button> -->
-
-
-      <form action="/mylist" method="POST">
-        *Restaurant Name: <input type="text" name="restaurantName"/><br/>
-        *Location: <input type="text" name="location"/><br/>
-        *Rating: <input type="number" min="1" max="5" name="rating"/><br/>
-        *Date: <input type="text" name="date" placeholder="mm/dd/yyyy"><br/>
-      </br>
-        *Name: <input type="text" name="name"/><br/>
-        Appetizer: <input type="text" name="appetizer"/><br/>
-        Entree: <input type="text" name="entree"/><br/>
-        Dessert: <input type="text" name="dessert"/><br/>
-        Alcoholic Drink: <input type="text" name="alcoholicDrink"/><br/>
-        Non-Alcoholic Drink: <input type="text" name="nonAlcoholicDrink"/><br/>
-        <p>* field is required.</p>
-        <!-- <div id="container">
-        </div> -->
-        <input type="submit" value="Submit Changes">
-      </form>
+    <div class="nav-container">
+      <%- include('./partials/header.ejs') %>
+      <div class="logout">
+        <button><a class="" href="/mylist">Back to my list</a></button>
+        <button><a class="" href="/">Logout</a></button>
+      </div>
+  </div>
 
 
-    <%- include('./partials/footer.ejs') %>
+<!-- Number of guests that generate more input fields -->
+      <!-- *Number of guests:<input type="number" id="guests" name="guests" min="1" max="5" placeholder="1"> -->
+
+
+      <div class="restaurant-body">
+
+        <form action="/mylist" method="POST">
+          *Restaurant Name: <input type="text" name="restaurantName" size="88"/><br/>
+          *Location: <input type="text" name="location" size="88"/><br/>
+          *Rating: <input type="number" min="1" max="5" name="rating" size="88"/><br/>
+          *Date: <input type="text" name="date" placeholder="mm/dd/yyyy" size="88"/><br/>
+      </div>
+      <div class="name-body">
+          *Name:<input type="text" name="name"/><br/>
+          Appetizer: <input type="text" name="appetizer"/><br/>
+          Entree: <input type="text" name="entree"/><br/>
+          Dessert: <input type="text" name="dessert"/><br/>
+          Alcoholic Drink: <input type="text" name="alcoholicDrink"/><br/>
+          Non-Alcoholic Drink: <input type="text" name="nonAlcoholicDrink"/><br/>
+          <p>* field is required.</p>
+          <!-- <div id="container"></div> -->
+          <button class="" type="submit" value="Submit Changes">Submit Changes</button>
+        </form>
+      </div>
+      <div class="footer">
+        <%- include('./partials/footer.ejs') %>
+      </div>
   </body>
+  <!-- adds more guest  -->
+  <!-- <script>
+//// https://stackoverflow.com/questions/54645570/get-input-number-value-and-loop-to-display-text-field
+    $('#guests').on('change keyup',function(){
+    let inputs = ('');
+    let value = parseInt($(this).val());
+    for(let i = 1; i<value; i++){
+      inputs += `*Name: <input type="text" name="name"/><br/>
+      Appetizer: <input type="text" name="appetizer"/><br/>
+      Entree: <input type="text" name="entree"/><br/>
+      Dessert: <input type="text" name="dessert"/><br/>
+      Alcoholic Drink: <input type="text" name="alcoholicDrink"/><br/>
+      Non-Alcoholic Drink: <input type="text" name="nonAlcoholicDrink"/><br/>`
+    }
+    $('#container').html(inputs)
+  })
+  </script> -->
 </html>
