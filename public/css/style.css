@@ -4,6 +4,7 @@
   --blue: #61E8E1;
   --corn: #F2E863;
   --orange: #DB504A;
+  --silver: #EFE5DC;
 }
 #searchBar{
   color: black;
@@ -18,15 +19,23 @@ li {
   list-style-type: none;
 }
 .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    border-style: solid;
-    color: var(--orange);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-style: solid;
+  color: var(--silver);
+  text-align: center;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 p {
-  font-size: 20px
+  font-size: 20px;
 }
 .nav-container {
   display: flex;
@@ -35,9 +44,16 @@ p {
   justify-content: space-between;
   align-items: center;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   padding: 2%;
   margin-bottom: 1%;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .logout{
   display: flex;
@@ -50,30 +66,41 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   padding: 20px;
   width: 250px;
   margin-bottom: 1%;
   margin-top: 1%;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .card-body > a:hover {
   color: black;
-
 }
-.card-body > p{
-  font-size: 20px;
+.card-body > p {
+  font-size: 30px;
+}
+.card-body > button {
+  margin-top: 6px;
 }
 .restaurant-body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0 auto;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   padding: 20px;
-  width: 500px;
-  margin-bottom: 1%;
+  width: 200px;
+  margin-bottom: 6%;
+  box-shadow: /* inset shadow */ inset 0 -3em 3em rgba(0,0,0,0.1), /* regular drop shadow */ 0 0 0 2px rgb(255,255,255), /* border effect shadow */ 0.3em 0.3em 1em rgba(0,0,0,0.3);
+  align-content: center;
+  align-items: stretch;
 }
 .name-body {
   display: flex;
@@ -82,22 +109,29 @@ p {
   justify-content: space-between;
   margin: 0 auto;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   padding: 20px;
   width: 300px;
-  margin-bottom: 1%;
+  margin-bottom: 6%;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 a {
   text-decoration: none;
-  color: var(--honeydew);
+  color: black;
 }
 * {
   font-family: 'Shizuru', cursive;
-  color: var(--honeydew);
+  color: black;
 }
 body {
-  background-color: var(--blue);
-  background-image: url(/imgs/wood-2.jpeg);
+  background-color: white;
+  background-image: url(/imgs/paper.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -114,9 +148,16 @@ p {
   justify-content: space-between;
   align-items: center;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   padding: 1%;
   margin-bottom: 1%;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .footer {
   display: flex;
@@ -124,9 +165,17 @@ p {
   flex-wrap: wrap;
   align-items: center;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   padding: 1%;
   margin-bottom: 1%;
+  margin-top: 1%;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .delete-btn {
   margin-bottom: 3%
@@ -136,20 +185,26 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border-style: solid;
-  background-color: var(--orange);
-  margin-bottom: 1%
+  margin-bottom: 1%;
 }
 .mylist-card {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* border-style: solid; */
-  /* border-color: var(--orange); */
+  border-style: solid;
+  background-color: var(--silver);
+  margin-top: 15px;
   width: 500px;
   height: 500px;
   align-items: center;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 img {
   width: 400px;
@@ -164,12 +219,19 @@ img {
   display: flex;
   flex-wrap: wrap;
   border-style: solid;
-  background-color: var(--orange);
+  background-color: var(--silver);
   align-content: center;
   flex-direction: column;
   align-items: center;
   margin: 100px;
   padding: 80px;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 .index-container > h1 {
   font-size: 150px;
@@ -179,17 +241,32 @@ img {
   font-size: 50px;
   text-align: center;
 }
+.email{
+  margin-bottom: 8px;
+}
 .modal-content {
+  display: flex;
   background-color: var(--blue);
-  background-image: url(/imgs/wood-2.jpeg);
+  background-image: url(/imgs/paper.png);
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow:
+		/* inset shadow */
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+		/* regular drop shadow */
+             0 0  0 2px rgb(255,255,255),
+		/* border effect shadow */
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
 }
 button {
-  background-color: var(--orange);
+  background-color: var(--silver);
 }
 .login-btns > button {
-  background-color: var(--orange);
+  background-color: var(--silver);
   height: 50px;
   width: 80px;
 }
@@ -208,13 +285,6 @@ button {
 .home-img {
   padding-top: 10px;
 }
-@media (max-width: 545px) {
-  .index-container > h1 {
-    font-size: 100px;
-    text-align: center;
-  }
-  .index-container > p {
-    font-size: 25px;
-    text-align: center;
-  }
+#rating{
+  margin-top: 10px;
 }
